@@ -1,0 +1,18 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  height: 220px;
+  border: 1px solid;
+  margin-bottom: 20px;
+}
+
+.form__input {
+  width: 80%;
+  margin-left: 15px;
+}
+
+.form__button {
+  width: 40%;
+  margin: 20px;
+}
