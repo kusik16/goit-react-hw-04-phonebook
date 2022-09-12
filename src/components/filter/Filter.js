@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types';
 
-import './filter.css';
+import filter from './Filter.module.css';
 
 const Filter = ({ onFilter }) => {
   return (
     <>
-      <div className="filter__title">Find contacts by name</div>
+      <div className={filter.title}>Find contacts by name</div>
       <input onChange={e => onFilter(e)} type="text" name="filter" />
     </>
   );

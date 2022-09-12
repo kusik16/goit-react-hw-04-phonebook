@@ -1,17 +1,17 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 
-import './contactForm.css';
+import contactForm from './ContactForm.module.css';
 
 const ContactForm = ({ onAddContact }) => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
 
   return (
-    <div className="form">
+    <div className={contactForm.form}>
       <label htmlFor="name">Name</label>
       <input
-        className="form__input"
+        className={contactForm.input}
         onChange={e => setName(e.target.value)}
         type="text"
         name="name"
@@ -21,7 +21,7 @@ const ContactForm = ({ onAddContact }) => {
       />
       <label htmlFor="number">Number</label>
       <input
-        className="form__input"
+        className={contactForm.input}
         onChange={e => setNumber(e.target.value)}
         type="tel"
         name="number"
@@ -30,7 +30,7 @@ const ContactForm = ({ onAddContact }) => {
         required
       />
       <button
-        className="form__button"
+        className={contactForm.btn}
         onClick={() => onAddContact(name, number)}
       >
         Add contact
@@ -44,4 +44,3 @@ export default ContactForm;
 ContactForm.propTypes = {
   onAddContact: PropTypes.func.isRequired,
 };
-
