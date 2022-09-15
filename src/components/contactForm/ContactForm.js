@@ -8,7 +8,10 @@ const ContactForm = ({ onAddContact }) => {
   const [number, setNumber] = useState('');
 
   return (
-    <div className={contactForm.form}>
+    <form
+      onSubmit={e => onAddContact(e, name, number)}
+      className={contactForm.form}
+    >
       <label htmlFor="name">Name</label>
       <input
         className={contactForm.input}
@@ -29,13 +32,10 @@ const ContactForm = ({ onAddContact }) => {
         title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
         required
       />
-      <button
-        className={contactForm.btn}
-        onClick={() => onAddContact(name, number)}
-      >
+      <button type="submit" className={contactForm.btn}>
         Add contact
       </button>
-    </div>
+    </form>
   );
 };
 
